@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Poppins:wght@500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Poppins", sans-serif;
+  @apply bg-white dark:bg-slate-700 min-h-screen;
+}
+
+/* Ensure the main content area has proper spacing */
+#root {
+  @apply min-h-screen flex flex-col;
+}
+
+/* Custom styles for react-slick arrows in dark mode */
+.dark .slick-prev:before,
+.dark .slick-next:before {
+  color: white !important;
+}
