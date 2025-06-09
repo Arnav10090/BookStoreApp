@@ -55,8 +55,8 @@ cd Backend
 npm install
 npm start
 ```
-*   **Database Connection:** Ensure your MongoDB database is running and accessible. You might need to set up your MongoDB connection string in a `.env` file (e.g., `MONGO_URI=mongodb://localhost:27017/bookstore`).
-*   **JWT Secret:** In the `.env` file define your JWT secret key (e.g., `JWT_SECRET=your_super_secret_jwt_key`).
+*   **Database Connection:** Ensure your MongoDB database is running and accessible. You might need to set up your MongoDB connection string in a `.env` file -`MONGO_URL=mongodb://127.0.0.1:27017/bookStore` and `PORT=4000`.
+*   **JWT Secret:** In the `.env` file define your JWT secret key -`JWT_SECRET=your_super_secret_jwt_key`.
 
 ### 3. Frontend Setup
 
