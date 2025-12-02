@@ -71,9 +71,9 @@ function PrivacyPolicy() {
           </p>
           <p className="text-gray-600 dark:text-gray-300 leading-relaxed mt-2">
             BookStore <br />
-            [Your Company Address Here] <br />
-            [Your City, Postal Code] <br />
-            [Your Country]
+            123 Book Street <br />
+            New York, NY 10001 <br />
+            United States
           </p>
         </section>
       </main>
