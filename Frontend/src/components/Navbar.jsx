@@ -47,23 +47,23 @@ function Navbar() {
   const navItems = (
     <>
       <li>
-        <a href="/books" className={`px-4 py-2 rounded-md transition-colors ${theme === 'light' ? (sticky ? 'text-white hover:bg-white hover:text-black' : 'text-black hover:bg-black hover:text-white') : 'dark:text-white dark:hover:bg-slate-700 dark:hover:text-white'}`}>Books</a>
+        <Link to="/books" className={`px-4 py-2 rounded-md transition-colors ${theme === 'light' ? (sticky ? 'text-white hover:bg-white hover:text-black' : 'text-black hover:bg-black hover:text-white') : 'dark:text-white dark:hover:bg-slate-700 dark:hover:text-white'}`}>Books</Link>
       </li>
       <li>
-        <a href="/contact" className={`px-4 py-2 rounded-md transition-colors ${theme === 'light' ? (sticky ? 'text-white hover:bg-white hover:text-black' : 'text-black hover:bg-black hover:text-white') : 'dark:text-white dark:hover:bg-slate-700 dark:hover:text-white'}`}>Contact</a>
+        <Link to="/contact" className={`px-4 py-2 rounded-md transition-colors ${theme === 'light' ? (sticky ? 'text-white hover:bg-white hover:text-black' : 'text-black hover:bg-black hover:text-white') : 'dark:text-white dark:hover:bg-slate-700 dark:hover:text-white'}`}>Contact</Link>
       </li>
       <li>
-        <a href="/about" className={`px-4 py-2 rounded-md transition-colors ${theme === 'light' ? (sticky ? 'text-white hover:bg-white hover:text-black' : 'text-black hover:bg-black hover:text-white') : 'dark:text-white dark:hover:bg-slate-700 dark:hover:text-white'}`}>About</a>
+        <Link to="/about" className={`px-4 py-2 rounded-md transition-colors ${theme === 'light' ? (sticky ? 'text-white hover:bg-white hover:text-black' : 'text-black hover:bg-black hover:text-white') : 'dark:text-white dark:hover:bg-slate-700 dark:hover:text-white'}`}>About</Link>
       </li>
     </>
   );
-  
+
   const mobileNavItems = (
     <>
       <li>
-        <a href="/" className={`px-4 py-2 rounded-md transition-colors ${theme === 'light' ? (sticky ? 'text-white hover:bg-white hover:text-black' : 'text-black hover:bg-black hover:text-white') : 'dark:text-white dark:hover:bg-slate-700 dark:hover:text-white'}`}>
+        <Link to="/" className={`px-4 py-2 rounded-md transition-colors ${theme === 'light' ? (sticky ? 'text-white hover:bg-white hover:text-black' : 'text-black hover:bg-black hover:text-white') : 'dark:text-white dark:hover:bg-slate-700 dark:hover:text-white'}`}>
           Home
-        </a>
+        </Link>
       </li>
       {navItems}
     </>
@@ -72,11 +72,10 @@ function Navbar() {
   return (
     <>
       <div
-        className={`max-w-screen-2xl container mx-auto md:px-20 px-4 dark:bg-slate-900 dark:text-white fixed top-0 left-0 right-0 z-50 ${
-          sticky
+        className={`w-full px-4 dark:bg-slate-900 dark:text-white fixed top-0 left-0 right-0 z-50 ${sticky
             ? "sticky-navbar shadow-md bg-base-200 dark:bg-slate-700 dark:text-white duration-300 transition-all ease-in-out"
             : ""
-        }`}
+          }`}
       >
         <div className="navbar">
           {/* Mobile Menu Button */}
@@ -91,7 +90,7 @@ function Navbar() {
                 {mobileNavItems}
               </ul>
             </div>
-            
+
             {/* Logo/Brand */}
             <Link to="/" className={`flex items-center text-2xl font-bold cursor-pointer ${sticky && theme === 'light' ? 'text-white' : 'text-black'} dark:text-white`}>
               <img src="/images/bookstore_logo.jpg" alt="BookStore Logo" className="h-8 w-8 mr-2" />
@@ -100,12 +99,12 @@ function Navbar() {
           </div>
 
           <div className="navbar-end space-x-3">
-            <div className="navbar-center hidden lg:flex">
+            <div className="hidden lg:flex">
               <ul className="menu menu-horizontal px-1">
                 <li>
-                  <a href="/" className={`px-4 py-2 rounded-md transition-colors ${theme === 'light' ? (sticky ? 'text-white hover:bg-white hover:text-black' : 'text-black hover:bg-black hover:text-white') : 'dark:text-white dark:hover:bg-slate-700 dark:hover:text-white'}`}>
+                  <Link to="/" className={`px-4 py-2 rounded-md transition-colors ${theme === 'light' ? (sticky ? 'text-white hover:bg-white hover:text-black' : 'text-black hover:bg-black hover:text-white') : 'dark:text-white dark:hover:bg-slate-700 dark:hover:text-white'}`}>
                     Home
-                  </a>
+                  </Link>
                 </li>
                 {navItems}
               </ul>
