@@ -3,8 +3,6 @@
 
 > A modern, full-stack MERN application for managing and exploring a vast collection of books. Experience seamless navigation, secure authentication, and a responsive design.
 
-![Project Banner](https://via.placeholder.com/1200x400?text=BookStore+App+Banner)
-
 ## 🚀 Features
 
 - **User Authentication**: Secure Signup and Login using JWT and BCrypt.
@@ -93,29 +91,5 @@ npm run dev
 
 The app will be available at `http://localhost:5173`.
 
-## 📸 Screenshots
-
-| Home Page | Books Page |
-|:---:|:---:|
-| ![Home](https://via.placeholder.com/500x300?text=Home+Page) | ![Books](https://via.placeholder.com/500x300?text=Books+Page) |
-
-| Login | Mobile View |
-|:---:|:---:|
-| ![Login](https://via.placeholder.com/500x300?text=Login+Modal) | ![Mobile](https://via.placeholder.com/500x300?text=Mobile+View) |
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1.  Fork the Project
-2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4.  Push to the Branch (`git push origin feature/AmazingFeature`)
-5.  Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the ISC License.
-
 ---
-Made with ❤️ by [Arnav](https://github.com/Arnav10090)
+Made with ❤️ by [Arnav Tiwari](https://github.com/Arnav10090)
