@@ -1,97 +1,121 @@
-# BookStore App
 
-A full-stack web application designed to provide a seamless experience for browsing and managing books. It features user authentication, a responsive design with dark mode support, and a structured layout for different sections of the application.
+# 📚 BookStore App
+
+> A modern, full-stack MERN application for managing and exploring a vast collection of books. Experience seamless navigation, secure authentication, and a responsive design.
+
+![Project Banner](https://via.placeholder.com/1200x400?text=BookStore+App+Banner)
 
 ## 🚀 Features
 
-*   **User Authentication:** Secure signup and login with password hashing (bcrypt).
-*   **JWT Authentication:** Implements JSON Web Tokens for secure and stateless user session management.
-*   **Protected Routes:** Access to specific book management features is restricted to authenticated users.
-*   **Dynamic Homepage:** Displays a selection of featured books at all times, with a responsive slider for mobile devices and a grid for larger screens.
-*   **Book Management:** Authenticated users can add, edit, and **delete** books.
-*   **Theming:** Toggle between light and dark modes for a personalized browsing experience.
-*   **Informative Pages:** Dedicated sections for "About Us" and "Contact Us" with appealing designs.
-*   **Responsive Design:** Optimized for various screen sizes, from mobile phones to desktops.
-*   **Toast Notifications:** Provides user feedback for actions like successful login/signup or errors.
+- **User Authentication**: Secure Signup and Login using JWT and BCrypt.
+- **Book Management**: Browse, Add, Edit, and Delete books (Admin/User specific roles).
+- **Responsive Design**: Fully optimized for Desktop, Tablet, and Mobile devices.
+- **Modern UI**: Built with **Tailwind CSS** and **DaisyUI** for a sleek, dark-mode compatible interface.
+- **Search & Filter**: Quickly find books by category or title.
+- **Image Uploads**: Support for book cover images using Multer.
 
-## 🛠️ Technologies Used
+## 🛠️ Tech Stack
 
-**Frontend:**
-*   **React.js:** A JavaScript library for building user interfaces.
-*   **Tailwind CSS:** A utility-first CSS framework for rapid UI development.
-*   **DaisyUI:** A Tailwind CSS component library.
-*   **React Router DOM:** For declarative routing in React applications.
-*   **Axios:** Promise-based HTTP client for making API requests.
-*   **React Hook Form:** For flexible and extensible forms with easy validation.
-*   **React Hot Toast:** For beautiful and responsive toast notifications.
-*   **React Slick:** A carousel component for React.
-*   **Vite:** A fast build tool for modern web projects.
+### Frontend
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![DaisyUI](https://img.shields.io/badge/DaisyUI-5A0EF8?style=for-the-badge&logo=daisyui&logoColor=white)
 
-**Backend:**
-*   **Node.js:** JavaScript runtime environment.
-*   **Express.js:** Fast, unopinionated, minimalist web framework for Node.js.
-*   **MongoDB:** NoSQL database for storing user and book data.
-*   **Mongoose:** MongoDB object data modeling (ODM) for Node.js.
-*   **JSON Web Tokens (JWT):** For secure and stateless user authentication.
-*   **bcryptjs:** For hashing passwords securely.
+### Backend
+![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
+![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
+![JWT](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=JSON%20web%20tokens&logoColor=white)
 
-## ⚙️ Setup and Installation
-
-Follow these steps to get your development environment set up.
-
-### 1. Clone the repository
+## 📂 Project Structure
 
 ```bash
-git clone <repository_url>
-cd bookstoreApp
+BookStoreApp/
+├── Backend/                # Node.js & Express Server
+│   ├── controllers/        # Request handlers
+│   ├── model/              # Mongoose schemas
+│   ├── routes/             # API routes
+│   └── index.js            # Entry point
+│
+└── Frontend/               # React & Vite Application
+    ├── src/
+    │   ├── components/     # Reusable UI components
+    │   ├── context/        # React Context (Auth, Search)
+    │   └── home/           # Landing page
+    └── package.json        # Dependencies
+```
+
+## 🏁 Getting Started
+
+Follow these steps to set up the project locally.
+
+### Prerequisites
+- Node.js (v14 or higher)
+- MongoDB (Local or Atlas URL)
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/Arnav10090/BookStoreApp.git
+cd BookStoreApp
 ```
 
 ### 2. Backend Setup
-
-Navigate to the `Backend` directory, install dependencies, and start the server.
-
+Navigate to the `Backend` directory and install dependencies.
 ```bash
 cd Backend
 npm install
+```
+
+Create a `.env` file in the `Backend` directory:
+```env
+PORT=4000
+MONGO_URL=mongodb://127.0.0.1:27017/bookStore
+JWT_SECRET=YourSecureSecretKey
+```
+
+Start the server:
+```bash
 npm start
 ```
-*   **Database Connection:** Ensure your MongoDB database is running and accessible. You might need to set up your MongoDB connection string in a `.env` file -`MONGO_URL=mongodb://127.0.0.1:27017/bookStore` and `PORT=4000`.
-*   **JWT Secret:** In the `.env` file define your JWT secret key -`JWT_SECRET=your_super_secret_jwt_key`.
 
 ### 3. Frontend Setup
-
-Open a new terminal, navigate to the `Frontend` directory, install dependencies, and start the development server.
-
+Open a new terminal, navigate to the `Frontend` directory, and install dependencies.
 ```bash
-cd ../Frontend
+cd Frontend
 npm install
+```
+
+Start the development server:
+```bash
 npm run dev
 ```
 
-The frontend application will typically run on `http://localhost:5173/`.
+The app will be available at `http://localhost:5173`.
 
-## 📂 Folder Structure (Simplified)
+## 📸 Screenshots
 
-```
-bookstoreApp/
-├── Backend/
-│   ├── controllers/      # API logic handlers
-│   ├── models/           # Mongoose schemas for database
-│   ├── routes/          # API route definitions
-│   ├── .env.example     # Environment variables example
-│   ├── server.js        # Backend entry point
-│   └── package.json
-└── Frontend/
-    ├── public/          # Static assets
-    ├── src/
-    │   ├── assets/      # Images, etc.
-    │   ├── components/  # Reusable UI components (Navbar, Footer, Books, FeaturedBook, Login, Signup, etc.)
-    │   ├── context/     # React Context for global state (e.g., AuthProvider)
-    │   ├── home/        # Homepage components
-    │   ├── App.jsx      # Main React application
-    │   ├── main.jsx     # React entry point
-    │   └── index.css    # Global styles
-    ├── index.html
-    ├── package.json
-    └── tailwind.config.js
-```
+| Home Page | Books Page |
+|:---:|:---:|
+| ![Home](https://via.placeholder.com/500x300?text=Home+Page) | ![Books](https://via.placeholder.com/500x300?text=Books+Page) |
+
+| Login | Mobile View |
+|:---:|:---:|
+| ![Login](https://via.placeholder.com/500x300?text=Login+Modal) | ![Mobile](https://via.placeholder.com/500x300?text=Mobile+View) |
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1.  Fork the Project
+2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4.  Push to the Branch (`git push origin feature/AmazingFeature`)
+5.  Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the ISC License.
+
+---
+Made with ❤️ by [Arnav](https://github.com/Arnav10090)
