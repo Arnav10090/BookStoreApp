@@ -48,10 +48,9 @@ function Books() {
     } catch (err) {
       console.error("Error fetching books:", err);
       setError(
-        `Failed to load books. ${
-          err.response?.data?.message ||
-          err.message ||
-          "Please try again later."
+        `Failed to load books. ${err.response?.data?.message ||
+        err.message ||
+        "Please try again later."
         }`
       );
     } finally {
@@ -92,8 +91,8 @@ function Books() {
       author: updatedBook.author || "Unknown Author",
       buyingLink: updatedBook.buyingLink || "",
     };
-    setBooks(prevBooks => 
-      prevBooks.map(book => 
+    setBooks(prevBooks =>
+      prevBooks.map(book =>
         book.id === formattedBook.id ? formattedBook : book
       )
     );
@@ -114,35 +113,7 @@ function Books() {
     toast.success('Book deleted successfully!');
   };
 
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-gray-50 py-16 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-900 mx-auto mb-4"></div>
-          <p className="text-gray-600">Loading books...</p>
-        </div>
-      </div>
-    );
-  }
-
   const displayedBooks = isAuthenticated ? books : books.filter(book => book.isFree);
-
-  if (error && displayedBooks.length === 0) {
-    return (
-      <div className="min-h-screen bg-gray-50 py-16 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
-        <div className="text-center">
-          <div className="text-red-500 text-4xl mb-4">⚠️</div>
-          <p className="text-red-600 mb-4">{error}</p>
-          <button
-            onClick={() => setError(null) || fetchBooks()}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-md transition-colors duration-300"
-          >
-            Retry
-          </button>
-        </div>
-      </div>
-    );
-  }
 
   const sliderSettings = {
     dots: true,
@@ -157,73 +128,95 @@ function Books() {
     <>
       <Navbar />
       <div className="min-h-screen bg-gray-50 dark:bg-slate-900 py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Our Books</h1>
-            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
-              Discover our collection of high-quality books. Start learning today
-              with our free and premium books.
-            </p>
-            {isAuthenticated && (
-              <button
-                onClick={() => setShowAddForm(!showAddForm)}
-                className="bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-6 rounded-md transition-colors duration-300"
-              >
-                {showAddForm ? 'Cancel' : 'Add New Book'}
-              </button>
-            )}
-          </div>
-
-          {showAddForm && isAuthenticated && (
-            <div className="mb-12">
-              <AddBookForm onBookAdded={handleBookAdded} />
+        {loading ? (
+          <div className="min-h-[60vh] flex items-center justify-center">
+            <div className="text-center">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-900 dark:border-white mx-auto mb-4"></div>
+              <p className="text-gray-600 dark:text-gray-400">Loading books...</p>
             </div>
-          )}
+          </div>
+        ) : error && displayedBooks.length === 0 ? (
+          <div className="min-h-[60vh] flex items-center justify-center">
+            <div className="text-center">
+              <div className="text-red-500 text-4xl mb-4">⚠️</div>
+              <p className="text-red-600 mb-4">{error}</p>
+              <button
+                onClick={() => setError(null) || fetchBooks()}
+                className="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-md transition-colors duration-300"
+              >
+                Retry
+              </button>
+            </div>
+          </div>
+        ) : (
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Our Books</h1>
+              <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
+                Discover our collection of high-quality books. Start learning today
+                with our free and premium books.
+              </p>
+              {isAuthenticated && (
+                <button
+                  onClick={() => setShowAddForm(!showAddForm)}
+                  className="bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-6 rounded-md transition-colors duration-300"
+                >
+                  {showAddForm ? 'Cancel' : 'Add New Book'}
+                </button>
+              )}
+            </div>
 
-          {editingBook && (
-            <EditBookForm
-              book={editingBook}
-              onBookUpdated={handleBookUpdated}
-              onBookDeleted={handleBookDeleted}
-              onCancel={handleCancelEdit}
-            />
-          )}
-
-          <div className="mt-12">
-            {displayedBooks.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 hidden md:grid">
-                {displayedBooks.map((book) => (
-                  <div
-                    key={book.id}
-                    className="flex justify-center"
-                  >
-                    <BookCard book={book} onEditClick={handleEditClick} />
-                  </div>
-                ))}
+            {showAddForm && isAuthenticated && (
+              <div className="mb-12">
+                <AddBookForm onBookAdded={handleBookAdded} />
               </div>
-            ) : (
-              <p className="text-center text-gray-700 dark:text-gray-400 text-lg">No books found.</p>
             )}
 
-            {/* Mobile Carousel */}
-            <div className="block md:hidden">
-              <Slider {...sliderSettings}>
-                {displayedBooks.length > 0 ? (
-                  displayedBooks.map((book) => (
+            {editingBook && (
+              <EditBookForm
+                book={editingBook}
+                onBookUpdated={handleBookUpdated}
+                onBookDeleted={handleBookDeleted}
+                onCancel={handleCancelEdit}
+              />
+            )}
+
+            <div className="mt-12">
+              {displayedBooks.length > 0 ? (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 hidden md:grid">
+                  {displayedBooks.map((book) => (
                     <div
                       key={book.id}
                       className="flex justify-center"
                     >
-                      <BookCard book={book} isMobile={true} onEditClick={handleEditClick} />
+                      <BookCard book={book} onEditClick={handleEditClick} />
                     </div>
-                  ))
-                ) : (
-                  <p className="text-center text-gray-700 dark:text-gray-400 text-lg">No books found.</p>
-                )}
-              </Slider>
+                  ))}
+                </div>
+              ) : (
+                <p className="text-center text-gray-700 dark:text-gray-400 text-lg">No books found.</p>
+              )}
+
+              {/* Mobile Carousel */}
+              <div className="block md:hidden">
+                <Slider {...sliderSettings}>
+                  {displayedBooks.length > 0 ? (
+                    displayedBooks.map((book) => (
+                      <div
+                        key={book.id}
+                        className="flex justify-center"
+                      >
+                        <BookCard book={book} isMobile={true} onEditClick={handleEditClick} />
+                      </div>
+                    ))
+                  ) : (
+                    <p className="text-center text-gray-700 dark:text-gray-400 text-lg">No books found.</p>
+                  )}
+                </Slider>
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
       <Footer />
     </>
