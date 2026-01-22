@@ -6,12 +6,6 @@
 
 **A modern, full-stack MERN application for discovering, managing, and exploring an extensive collection of books.**
 
-[![GitHub stars](https://img.shields.io/github/stars/Arnav10090/BookStoreApp?style=social)](https://github.com/Arnav10090/BookStoreApp/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/Arnav10090/BookStoreApp?style=social)](https://github.com/Arnav10090/BookStoreApp/network/members)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-
-[Live Demo](#) · [Report Bug](https://github.com/Arnav10090/BookStoreApp/issues) · [Request Feature](https://github.com/Arnav10090/BookStoreApp/issues)
-
 </div>
 
 ---
@@ -218,22 +212,6 @@ The app will be available at `http://localhost:5173` 🎉
 
 ---
 
-## 📸 Screenshots
-
-### Home Page
-> Beautiful landing page with featured books slider
-
-### Books Page - Featured View
-> Browse curated collection of 20+ books
-
-### Books Page - Personalized Collection
-> Manage your personal library with CRUD operations
-
-### Contact Page
-> Get in touch with responsive contact form
-
----
-
 ## 🎯 Usage
 
 ### For Users:
@@ -274,45 +252,12 @@ POST   /api/contact/submit   - Submit contact form (Auth required)
 
 ---
 
-## 🤝 Contributing
-
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
----
-
-## 📝 License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
----
-
 ## 👨‍💻 Author
 
 **Arnav Tiwari**
 
 - GitHub: [@Arnav10090](https://github.com/Arnav10090)
-- LinkedIn: [Connect with me](https://www.linkedin.com/in/arnavtiwari10090/)
-
----
-
-## 🌟 Show Your Support
-
-If you found this project helpful, please give it a ⭐️!
-
----
-
-## 📧 Contact
-
-Have questions or suggestions? Feel free to reach out!
-
-- Email: info@bookstore.com
-- Project Link: [https://github.com/Arnav10090/BookStoreApp](https://github.com/Arnav10090/BookStoreApp)
+- LinkedIn: [Connect with me](https://www.linkedin.com/in/arnav-tiwari-063278253/)
 
 ---
 
