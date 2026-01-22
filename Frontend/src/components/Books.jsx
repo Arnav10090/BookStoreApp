@@ -11,6 +11,7 @@ import AddBookForm from "./AddBookForm";
 import EditBookForm from "./EditBookForm";
 import BookCard from "./BookCard";
 import toast from "react-hot-toast";
+import defaultBooksData from "../data/books.json";
 
 function Books() {
   const [books, setBooks] = useState([]);
@@ -18,6 +19,7 @@ function Books() {
   const [error, setError] = useState(null);
   const [showAddForm, setShowAddForm] = useState(false);
   const [editingBook, setEditingBook] = useState(null);
+  const [viewMode, setViewMode] = useState("default"); // "default" or "personalized"
   const { authUser, isAuthenticated } = useAuth();
 
   const fetchBooks = async () => {
@@ -113,7 +115,22 @@ function Books() {
     toast.success('Book deleted successfully!');
   };
 
-  const displayedBooks = isAuthenticated ? books : books.filter(book => book.isFree);
+  // Format default books from books.json (first 20)
+  const defaultBooks = defaultBooksData.slice(0, 20).map((book, index) => ({
+    id: `default-${index}`,
+    title: book.title,
+    price: book.price.toString(),
+    category: book.category,
+    image: book.imageUrl,
+    isFree: book.price === 0,
+    author: book.author,
+    buyingLink: book.buyingLink,
+  }));
+
+  // Determine which books to display based on view mode
+  const displayedBooks = viewMode === "default"
+    ? defaultBooks
+    : (isAuthenticated ? books : books.filter(book => book.isFree));
 
   const sliderSettings = {
     dots: true,
@@ -149,21 +166,39 @@ function Books() {
             </div>
           </div>
         ) : (
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Our Books</h1>
+          <div className="max-w-7xl mx-auto py-10">
+            <div className="text-center mb-12">
+              <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                {viewMode === "default" ? "Featured Books" : "Your Personalized Collection"}
+              </h1>
               <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
-                Discover our collection of high-quality books. Start learning today
-                with our free and premium books.
+                {viewMode === "default"
+                  ? "Discover our curated collection of must-read books. Start your reading journey today!"
+                  : "Manage your personal book collection. Add, edit, and organize your favorite books."
+                }
               </p>
-              {isAuthenticated && (
-                <button
-                  onClick={() => setShowAddForm(!showAddForm)}
-                  className="bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-6 rounded-md transition-colors duration-300"
-                >
-                  {showAddForm ? 'Cancel' : 'Add New Book'}
-                </button>
-              )}
+              <div className="flex items-center justify-center gap-4">
+                {viewMode === "personalized" && isAuthenticated && (
+                  <button
+                    onClick={() => setShowAddForm(!showAddForm)}
+                    className="bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-6 rounded-md transition-colors duration-300"
+                  >
+                    {showAddForm ? 'Cancel' : 'Add New Book'}
+                  </button>
+                )}
+                {isAuthenticated && (
+                  <button
+                    onClick={() => {
+                      setViewMode(viewMode === "default" ? "personalized" : "default");
+                      setShowAddForm(false);
+                      setEditingBook(null);
+                    }}
+                    className="bg-pink-600 hover:bg-pink-700 text-white font-medium py-2 px-6 rounded-md transition-colors duration-300"
+                  >
+                    {viewMode === "default" ? "Your Personalized Collection" : "View Featured Books"}
+                  </button>
+                )}
+              </div>
             </div>
 
             {showAddForm && isAuthenticated && (

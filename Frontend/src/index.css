@@ -19,3 +19,14 @@ body {
 .dark .slick-next:before {
   color: white !important;
 }
+
+/* Custom styles for react-slick dots in dark mode */
+.dark .slick-dots li button:before {
+  color: white !important;
+  opacity: 0.5;
+}
+
+.dark .slick-dots li.slick-active button:before {
+  color: white !important;
+  opacity: 1;
+}

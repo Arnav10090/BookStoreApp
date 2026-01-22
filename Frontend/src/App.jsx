@@ -9,8 +9,9 @@ import PrivacyPolicy from "./components/PrivacyPolicy";
 import { Toaster } from "react-hot-toast";
 import FloatingHomeButton from "./components/FloatingHomeButton";
 import { useAuth } from "./context/AuthProvider";
-import Login from "./components/Login"; 
+import Login from "./components/Login";
 import { SearchProvider } from "./context/SearchProvider";
+import ScrollToTop from "./components/ScrollToTop";
 
 // Protected Route component for authenticated routes
 function ProtectedRoute({ children }) {
@@ -61,6 +62,7 @@ function App() {
     <div className="bg-white dark:bg-slate-900 dark:text-white min-h-screen overflow-x-hidden">
       <Toaster position="top-right" />
       <SearchProvider>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route
@@ -83,13 +85,13 @@ function App() {
               </PublicRoute>
             }
           /> */}
-          <Route 
-            path="/signup" 
+          <Route
+            path="/signup"
             element={
               <PublicRoute>
                 <Signup />
               </PublicRoute>
-            } 
+            }
           />
         </Routes>
       </SearchProvider>
