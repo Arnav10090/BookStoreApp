@@ -1,3 +1,5 @@
+<div align="center">
+
 # 📚 BookStore App
 
 <div align="center">
