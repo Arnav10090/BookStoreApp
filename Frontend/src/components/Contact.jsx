@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaPaperPlane, FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaPaperPlane, FaYoutube, FaTwitter, FaInstagram } from 'react-icons/fa';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import toast from "react-hot-toast";
@@ -41,7 +41,7 @@ const Contact = () => {
     }
 
     setIsSubmitting(true);
-    
+
     try {
       const response = await axios.post("http://localhost:4000/contact/submit", {
         fullName: formData.name,
@@ -49,14 +49,14 @@ const Contact = () => {
         subject: formData.subject,
         message: formData.message,
       });
-      
+
       console.log(response.data);
       setSubmitStatus({
         success: true,
         message: response.data.message
       });
       toast.success(response.data.message);
-      
+
       // Reset form
       setFormData({
         name: '',
@@ -81,7 +81,7 @@ const Contact = () => {
       }
     } finally {
       setIsSubmitting(false);
-      
+
       // Clear status message after 5 seconds
       setTimeout(() => {
         setSubmitStatus(null);
@@ -108,13 +108,13 @@ const Contact = () => {
                 {/* Contact Form */}
                 <div className="p-8 lg:p-12">
                   <h2 className="text-2xl font-bold text-gray-900 mb-8">Send us a message</h2>
-                  
+
                   {submitStatus && (
                     <div className={`mb-6 p-4 rounded-lg ${submitStatus.success ? 'bg-green-50 text-green-800' : 'bg-red-50 text-red-800'}`}>
                       {submitStatus.message}
                     </div>
                   )}
-                  
+
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
@@ -150,7 +150,7 @@ const Contact = () => {
 
                     <div>
                       <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
-                        Subject
+                        Subject <span className="text-red-500">*</span>
                       </label>
                       <input
                         type="text"
@@ -158,6 +158,7 @@ const Contact = () => {
                         name="subject"
                         value={formData.subject}
                         onChange={handleChange}
+                        required
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200"
                         placeholder="How can we help?"
                       />
@@ -201,7 +202,7 @@ const Contact = () => {
                 {/* Contact Information */}
                 <div className="bg-blue-600 text-white p-8 lg:p-12">
                   <h2 className="text-2xl font-bold mb-8">Contact Information</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="flex items-start">
                       <div className="flex-shrink-0 bg-blue-500 rounded-full p-3">
@@ -239,21 +240,17 @@ const Contact = () => {
                   <div className="mt-12">
                     <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
                     <div className="flex space-x-4">
-                      <a href="#" className="text-white hover:text-blue-200 transition-colors duration-200">
-                        <span className="sr-only">Facebook</span>
-                        <FaFacebook className="h-6 w-6" />
+                      <a href="https://www.youtube.com/shorts/eTWnFZEZjVw" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-200 transition-colors duration-200">
+                        <span className="sr-only">YouTube</span>
+                        <FaYoutube className="h-6 w-6" />
                       </a>
-                      <a href="#" className="text-white hover:text-blue-200 transition-colors duration-200">
+                      <a href="https://x.com/bookstore" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-200 transition-colors duration-200">
                         <span className="sr-only">Twitter</span>
                         <FaTwitter className="h-6 w-6" />
                       </a>
-                      <a href="#" className="text-white hover:text-blue-200 transition-colors duration-200">
+                      <a href="https://www.instagram.com/kidsbookstoreindia/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-200 transition-colors duration-200">
                         <span className="sr-only">Instagram</span>
                         <FaInstagram className="h-6 w-6" />
-                      </a>
-                      <a href="#" className="text-white hover:text-blue-200 transition-colors duration-200">
-                        <span className="sr-only">LinkedIn</span>
-                        <FaLinkedin className="h-6 w-6" />
                       </a>
                     </div>
                   </div>

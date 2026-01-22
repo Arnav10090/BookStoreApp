@@ -1,0 +1,122 @@
+[
+    {
+        "title": "To Kill a Mockingbird",
+        "author": "Harper Lee",
+        "price": 399,
+        "category": "Classic Literature",
+        "buyingLink": "https://www.amazon.com/dp/0061120081",
+        "imageUrl": "https://m.media-amazon.com/images/I/81JYG8sqRsL._SL1500_.jpg"
+    },
+    {
+        "title": "1984",
+        "author": "George Orwell",
+        "price": 299,
+        "category": "Dystopian Fiction",
+        "buyingLink": "https://www.amazon.com/dp/0451524934",
+        "imageUrl": "https://m.media-amazon.com/images/I/71wANojhEKL._SL1500_.jpg"
+    },
+    {
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "price": 249,
+        "category": "Classic Literature",
+        "buyingLink": "https://www.amazon.com/dp/0743273567",
+        "imageUrl": "https://m.media-amazon.com/images/I/81T4dS6IkaL._SL1500_.jpg"
+    },
+    {
+        "title": "Harry Potter and the Sorcerer's Stone",
+        "author": "J.K. Rowling",
+        "price": 499,
+        "category": "Fantasy",
+        "buyingLink": "https://www.amazon.com/dp/059035342X",
+        "imageUrl": "https://m.media-amazon.com/images/I/91wKDODkgWL._SL1500_.jpg"
+    },
+    {
+        "title": "The Lord of the Rings",
+        "author": "J.R.R. Tolkien",
+        "price": 799,
+        "category": "Fantasy",
+        "buyingLink": "https://www.amazon.com/dp/0618640150",
+        "imageUrl": "https://m.media-amazon.com/images/I/81nV6x2ey4L._SL1500_.jpg"
+    },
+    {
+        "title": "Pride and Prejudice",
+        "author": "Jane Austen",
+        "price": 199,
+        "category": "Romance",
+        "buyingLink": "https://www.amazon.com/dp/0141439513",
+        "imageUrl": "https://m.media-amazon.com/images/I/81NLDvyAHrL._SL1500_.jpg"
+    },
+    {
+        "title": "The Alchemist",
+        "author": "Paulo Coelho",
+        "price": 349,
+        "category": "Philosophical Fiction",
+        "buyingLink": "https://www.amazon.com/dp/0061122416",
+        "imageUrl": "https://m.media-amazon.com/images/I/61OuRVln3BL._SL1360_.jpg"
+    },
+    {
+        "title": "The Catcher in the Rye",
+        "author": "J.D. Salinger",
+        "price": 299,
+        "category": "Classic Literature",
+        "buyingLink": "https://www.amazon.com/dp/0316769487",
+        "imageUrl": "https://m.media-amazon.com/images/I/8125BDk3l9L._SL1500_.jpg"
+    },
+    {
+        "title": "Sapiens: A Brief History of Humankind",
+        "author": "Yuval Noah Harari",
+        "price": 599,
+        "category": "Non-Fiction",
+        "buyingLink": "https://www.amazon.com/Sapiens-Yuval-Noah-Harari-audiobook/dp/B0741F3M7C/ref=sr_1_1?crid=26CPF661SR5PA&dib=eyJ2IjoiMSJ9.gGG2QXT9Ld18tsLmJxvgZNQ0OX5pLZ5TzQnUYYxiheQQ5rBoQ1wpZTcjjslVC809uSJ8yNOn0CEgzvE0Prq45RXucXFoKml4-VWaNgLH7aotoC90THjIvj8blOBsi8gVte1UPw56KuESddNy9I1Qm_xWZEiLmK3a4_fF7fAbI1zkzmCRpVq4An6AYRx205328x8XZ2lsz2xcUNkYHuATQB6CHYAfcRV7kwlvLDbqX94.e_enIgKV5ikf2qJ5FrKRrk-MnBdXqJyqGb9Tm4McWRw&dib_tag=se&keywords=Sapiens%3A+A+Brief+History+of+Humankind&qid=1769055353&s=books&sprefix=%2Cstripbooks-intl-ship%2C314&sr=1-1",
+        "imageUrl": "https://m.media-amazon.com/images/I/71f6c5Ay+LL._SL1500_.jpg"
+    },
+    {
+        "title": "Atomic Habits",
+        "author": "James Clear",
+        "price": 450,
+        "category": "Self-Help",
+        "buyingLink": "https://www.amazon.com/dp/0735211299",
+        "imageUrl": "https://m.media-amazon.com/images/I/81kg51XRc1L._SL1500_.jpg"
+    },
+    {
+        "title": "The Hobbit",
+        "author": "J.R.R. Tolkien",
+        "price": 399,
+        "category": "Fantasy",
+        "buyingLink": "https://www.amazon.com/dp/054792822X",
+        "imageUrl": "https://m.media-amazon.com/images/I/712cDO7d73L._SL1500_.jpg"
+    },
+    {
+        "title": "The Book Thief",
+        "author": "Markus Zusak",
+        "price": 449,
+        "category": "Historical Fiction",
+        "buyingLink": "https://www.amazon.com/dp/0375842209",
+        "imageUrl": "https://m.media-amazon.com/images/I/914cHl9v7oL._SL1500_.jpg"
+    },
+    {
+        "title": "Brave New World",
+        "author": "Aldous Huxley",
+        "price": 299,
+        "category": "Dystopian Fiction",
+        "buyingLink": "https://www.amazon.com/dp/0060850523",
+        "imageUrl": "https://m.media-amazon.com/images/I/71GNqqXuN3L._SL1500_.jpg"
+    },
+    {
+        "title": "Think and Grow Rich",
+        "author": "Napoleon Hill",
+        "price": 349,
+        "category": "Self-Help",
+        "buyingLink": "https://www.amazon.com/dp/1585424331",
+        "imageUrl": "https://m.media-amazon.com/images/I/61IxJuRI39L._SL1000_.jpg"
+    },
+    {
+        "title": "The Da Vinci Code",
+        "author": "Dan Brown",
+        "price": 399,
+        "category": "Thriller",
+        "buyingLink": "https://www.amazon.com/dp/0307474275",
+        "imageUrl": "https://m.media-amazon.com/images/I/811nqCf7o1L._SL1500_.jpg"
+    }
+]

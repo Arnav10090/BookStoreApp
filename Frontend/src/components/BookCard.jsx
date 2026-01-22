@@ -62,7 +62,7 @@ const BookCard = ({ book, isMobile = false, onEditClick }) => {
             ${book.price}
           </span>
           <div className="flex space-x-2 ml-2">
-            {onEditClick && (
+            {onEditClick && !book.id.toString().startsWith('default-') && (
               <button
                 onClick={() => onEditClick(book)}
                 className="bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-2 px-4 rounded-full transition-colors duration-300"
