@@ -12,6 +12,7 @@
 
 ---
 
+<div align="left">
 ## ✨ Features
 
 ### 🔐 **Authentication & Security**
@@ -48,6 +49,10 @@
 - Loading states and error handling
 
 ---
+</div>
+
+
+<div align="left">
 
 ## 🛠️ Tech Stack
 
@@ -75,6 +80,9 @@
 </p>
 
 ---
+</div>
+
+<div align="left">
 
 ## 📂 Project Structure
 
@@ -135,8 +143,11 @@ BookStoreApp/
     ├── package.json            # Frontend dependencies
     └── vite.config.js          # Vite configuration
 ```
+</div>
 
 ---
+
+<div align="left">
 
 ## 🚀 Getting Started
 
@@ -212,7 +223,11 @@ npm run dev
 
 The app will be available at `http://localhost:5173` 🎉
 
+</div>
+
 ---
+
+<div align="left">
 
 ## 🎯 Usage
 
@@ -230,6 +245,9 @@ The app will be available at `http://localhost:5173` 🎉
 - **Responsive**: Mobile-first design approach
 
 ---
+</div>
+
+<div align="left">
 
 ## 🔗 API Endpoints
 
@@ -252,7 +270,11 @@ DELETE /api/book/:id         - Delete book (Auth required)
 POST   /api/contact/submit   - Submit contact form (Auth required)
 ```
 
+</div>
+
 ---
+
+<div align="left">
 
 ## 👨‍💻 Author
 
@@ -262,6 +284,7 @@ POST   /api/contact/submit   - Submit contact form (Auth required)
 - LinkedIn: [Connect with me](https://www.linkedin.com/in/arnav-tiwari-063278253/)
 
 ---
+</div>
 
 <div align="center">
 
