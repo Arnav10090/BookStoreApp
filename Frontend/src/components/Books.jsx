@@ -22,6 +22,8 @@ function Books() {
   const [viewMode, setViewMode] = useState("default"); // "default" or "personalized"
   const { authUser, isAuthenticated } = useAuth();
 
+  const [displayLimit, setDisplayLimit] = useState("All");
+
   const fetchBooks = async () => {
     setLoading(true);
     setError(null);
@@ -128,9 +130,12 @@ function Books() {
   }));
 
   // Determine which books to display based on view mode
-  const displayedBooks = viewMode === "default"
+  let allBooks = viewMode === "default"
     ? defaultBooks
     : (isAuthenticated ? books : books.filter(book => book.isFree));
+
+  // Apply limit filter
+  const displayedBooks = displayLimit === "All" ? allBooks : allBooks.slice(0, parseInt(displayLimit));
 
   const sliderSettings = {
     dots: true,
@@ -177,7 +182,24 @@ function Books() {
                   : "Manage your personal book collection. Add, edit, and organize your favorite books."
                 }
               </p>
-              <div className="flex items-center justify-center gap-4">
+
+              {/* Controls Container */}
+              <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-8">
+                {/* Limit Filter */}
+                <div className="flex items-center gap-3 bg-white dark:bg-slate-800 p-2 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700">
+                  <label className="text-gray-600 dark:text-gray-300 font-semibold whitespace-nowrap px-2">Show:</label>
+                  <select
+                    value={displayLimit}
+                    onChange={(e) => setDisplayLimit(e.target.value)}
+                    className="select select-bordered select-md bg-gray-50 dark:bg-slate-700 dark:text-white border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-pink-500 rounded-md px-4 font-medium min-w-[100px]"
+                  >
+                    <option value="6">6</option>
+                    <option value="12">12</option>
+                    <option value="24">24</option>
+                    <option value="All">All</option>
+                  </select>
+                </div>
+
                 {viewMode === "personalized" && isAuthenticated && (
                   <button
                     onClick={() => setShowAddForm(!showAddForm)}

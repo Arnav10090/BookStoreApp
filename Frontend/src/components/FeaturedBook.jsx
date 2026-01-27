@@ -4,11 +4,13 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useSearch } from "../context/SearchProvider";
+import { useAuth } from "../context/AuthProvider";
 import BookCard from "./BookCard";
 import defaultBooksData from "../data/books.json";
 
 function FeaturedBook() {
   const { searchTerm } = useSearch();
+  const { authUser } = useAuth();
 
   const desktopSliderSettings = {
     dots: true,
@@ -32,8 +34,9 @@ function FeaturedBook() {
     autoplaySpeed: 3000,
   };
 
-  // Format default books from books.json (only first 10)
-  const defaultBooks = defaultBooksData.slice(0, 10).map((book, index) => ({
+  // Format default books from books.json (only first 10, or 3 if guest)
+  const maxBooks = authUser ? 10 : 3;
+  const defaultBooks = defaultBooksData.slice(0, maxBooks).map((book, index) => ({
     id: `default-${index}`,
     title: book.title,
     price: book.price.toString(),
